@@ -11,6 +11,6 @@
 </head>
 <body>
     <!-- proceeds to student info form page -->
-    <a href="application.php?student_info"><button>Submit a Request</button></a>
+    <a href="student_info.php"><button>Submit a Request</button></a>
 </body>
 </html>

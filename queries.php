@@ -36,4 +36,43 @@ function get_course_title($code){
     }
     return $title;
 }
+
+// get session description
+function get_session_desc($code){
+    global $conn;
+    $query = "SELECT *
+            FROM sessions
+            WHERE session_code = '$code'";
+    $result = mysqli_query($conn, $query);
+    while($session = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+        $desc = $session['session_desc'];
+    }
+    return $desc;
+}
+
+// get term description
+function get_term_desc($code){
+    global $conn;
+    $query = "SELECT *
+            FROM terms
+            WHERE term_code = '$code'";
+    $result = mysqli_query($conn, $query);
+    while($term = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+        $desc = $term['term_desc'];
+    }
+    return $desc;
+}
+
+// get campus name
+function get_campus_name($id){
+    global $conn;
+    $query = "SELECT *
+            FROM campuses
+            WHERE campus_id = '$id'";
+    $result = mysqli_query($conn, $query);
+    while($campus = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+        $name = $campus['campus_name'];
+    }
+    return $name;
+}
 ?>

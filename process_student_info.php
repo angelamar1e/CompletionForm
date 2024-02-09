@@ -1,6 +1,4 @@
 <?php
-    include('navbar.html');
-    include('connection.php');
     include('queries.php');
 
     session_start();
@@ -26,5 +24,5 @@
         $_SESSION['section'] = $section;
     }
 
-    header('Location: request_info.php');
+    header('Location: request_info.php?details');
 ?>
