@@ -1,9 +1,9 @@
 /* navbar.css */
 
 .nav_container {
-    background-color: #740e0e84; /* Set background color for the navigation bar */
+    background-color: #740e0eb9; /* Set background color for the navigation bar */
     color: #fff; /* Set text color for the navigation links */
-    padding: 15px; /* Add padding to the navigation bar */
+    padding: 10px; /* Add padding to the navigation bar */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,23 +12,32 @@
 
 
 .navbar {
-    border-radius: 3%;
+    width: 65%;
+    height: 67%;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-left: 50px;
 }
 
 .img_div {
     margin-right: 20px; /* Add space between the logo and navigation links */
+    margin-left: 40px;
 }
 
 img {
-    width: 50px; /* Set width of the logo */
+    width: 100px; /* Set width of the logo */
     height: auto; /* Maintain aspect ratio */
 }
 
 .tab {
-    display: inline; /* Display the navigation links horizontally */
-    margin-right: 50px; /* Add some space between each navigation link */
+    display: inline-block; /* Display the navigation links horizontally */
+    margin-right: 50px;
+    position: relative;
+    text-align: center;
+    padding: 5px 10px;
+    line-height: 30px;
 }
 
 .tab a {
@@ -38,5 +47,11 @@ img {
 }
 
 .tab a:hover {
-    color: #ccc; /* Change text color on hover */
+    background-color: #c79b15a4; 
+}
+
+.tab.active {
+    background-color: #c79b15a4; /* Change background color */
+    width: 15%;
+    border-radius: 40px;
 }
