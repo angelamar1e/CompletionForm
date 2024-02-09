@@ -21,14 +21,14 @@ label[for="request-type"] {
     color: white;
     position: relative;
     font-size: 45px;
-    margin-top: 65px;
+    margin-top: 75px;
     margin-bottom: 30px;
 }
 
 ul.list-unstyled li {
     font-family: 'SF Pro Text', sans-serif;
     font-style: italic;
-    font-size: 22px;
+    font-size: 20px;
     color: rgba(255, 255, 255, 0.756);
     margin-bottom: 20px ;
     margin-left: 20px;
