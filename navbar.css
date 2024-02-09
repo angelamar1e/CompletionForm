@@ -1,0 +1,42 @@
+/* navbar.css */
+
+.nav_container {
+    background-color: #740e0e84; /* Set background color for the navigation bar */
+    color: #fff; /* Set text color for the navigation links */
+    padding: 15px; /* Add padding to the navigation bar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'SF Pro Display', sans-serif; 
+}
+
+
+.navbar {
+    border-radius: 3%;
+    display: flex;
+    flex-direction: row;
+}
+
+.img_div {
+    margin-right: 20px; /* Add space between the logo and navigation links */
+}
+
+img {
+    width: 50px; /* Set width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.tab {
+    display: inline; /* Display the navigation links horizontally */
+    margin-right: 50px; /* Add some space between each navigation link */
+}
+
+.tab a {
+    font-size: small;
+    color: #fff; /* Set text color for the navigation links */
+    text-decoration: none; /* Remove underline from the links */
+}
+
+.tab a:hover {
+    color: #ccc; /* Change text color on hover */
+}
