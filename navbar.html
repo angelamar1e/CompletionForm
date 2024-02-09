@@ -9,18 +9,18 @@
 </head>
 <body>
     <div class="nav_container">
-        <div class="img_div"><img src="PUPLogo.png" alt="logo"></div>
+        <div class="img_div"><img src="img/PUPLogo.png" alt="logo"></div>
         <div class="navbar">
-            <h3 class="tab">
+            <h3 class="tab <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
                 <a href="index.php">Home</a>
             </h3>
-            <h3 class="tab">
+            <h3 class="tab <?php echo ($current_page == 'student_info.php') ? 'active' : ''; ?>">
                 <a href="student_info.php">Student Information</a>
             </h3>
-            <h3 class="tab">
+            <h3 class="tab <?php echo ($current_page == 'request_info.php') ? 'active' : ''; ?>">
                 <a href="request_info.php">Request Information</a>
             </h3>
-            <h3 class="tab">
+            <h3 class="tab <?php echo ($current_page == 'review_application.php') ? 'active' : ''; ?>">
                 <a href="review_application.php">Review</a>
             </h3>
         </div>
