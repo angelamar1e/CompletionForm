@@ -1,5 +1,7 @@
 <?php 
     include('navbar.html');
+    include('connection.php');
+    include('queries.php');
 ?>
 
 <!DOCTYPE html>
@@ -7,10 +9,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Request Information</title>
 </head>
 <body>
-    <!-- proceeds to student info form page -->
-    <a href="application.php?student_info"><button>Submit a Request</button></a>
+    <?php session_start(); ?>
+    
 </body>
 </html>
