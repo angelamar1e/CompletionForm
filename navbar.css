@@ -1,7 +1,7 @@
 /* navbar.css */
 
 .nav_container {
-    background-color: #740e0eb9; /* Set background color for the navigation bar */
+    background-color: rgba(142, 76, 69, 0.804); /* Set background color for the navigation bar */
     color: #fff; /* Set text color for the navigation links */
     padding: 10px; /* Add padding to the navigation bar */
     display: flex;
