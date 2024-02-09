@@ -75,4 +75,68 @@ function get_campus_name($id){
     }
     return $name;
 }
+
+// check if student record is already in the db 
+function is_existing($stud_num){
+    global $conn;
+    $query = "SELECT COUNT(*) as 'count'
+    FROM students
+    WHERE student_number = $stud_num";
+    $result = mysqli_query($conn, $query);
+    $count = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    return $count['count'];
+}
+
+// add student info into students table 
+function add_student($stud_num, $fname, $mname, $lname, $course, $year, $section){
+    global $conn;
+    $query = "INSERT INTO students(student_number, first_name, middle_name, last_name, course_code, year, section)
+            VALUES ($stud_num, '$fname', '$mname','$lname','$course','$year','$section')";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// add request info into requests table 
+function add_request($stud_num, $subj_code, $subj_title, $session, $term, $campus, $report,$reason,$prof){
+    // Generate a control number with date and time
+    $dateTime = date('YmdHis'); // Current date and time in the format YYYYMMDDHHMMSS
+    $randomNumber = mt_rand(0,999999); // Generate a random 4-digit number
+    $control_number = $dateTime . $randomNumber;
+    $control_number = substr($control_number, 0, 11);
+
+    $stud_num = $_SESSION['stud_num'];
+    $_SESSION['control_number'] = $control_number;
+
+    $date = date("Y-m-d");
+    global $conn;
+    $query = "INSERT INTO requests(control_number, student_number, subject_code, subject_title, session_code, term_code, campus_id, reported_as, reason, creation_date, requested_by)
+            VALUES ($control_number, $stud_num, '$subj_code','$subj_title','$session', '$term', $campus, '$report','$reason','$date','$prof')";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// add additional info for different request types into tables
+function late_reporting_request($control_number,$grade,$units){
+    global $conn;
+    $query = "INSERT INTO late_reporting_requests(control_number,final_grade,units)
+            VALUES ($control_number,$grade,$units)";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function completion_request($control_number,$grade,$units){
+    global $conn;
+    $query = "INSERT INTO completion_requests(control_number,final_grade,units)
+            VALUES ($control_number,$grade,$units)";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function correction_request($control_number,$fname,$mname,$lname){
+    global $conn;
+    $query = "INSERT INTO correction_requests(control_number,modified_fname,modified_mname,modified_lname)
+            VALUES ($control_number,'$fname','$mname','$lname')";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
 ?>

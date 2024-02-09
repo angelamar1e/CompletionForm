@@ -56,7 +56,8 @@
             <!-- section input -->
             <label for="section">Section</label>
             <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required>
-
+            
+            <h3>Click next to save your input.</h3>
             <input type="submit" value="Next">
         </form>
 </body>
