@@ -1,0 +1,65 @@
+body {
+    background-image: url('img/pup.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+
+
+body::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute; /* Position absolutely */
+    top: 135px;
+    left: 0;
+    width: 100%; /* Cover the entire width */
+    height: 100%; /* Cover the entire height */
+    background-color: #822c2dce; /* Set the color and opacity of the layer */
+}
+
+label[for="request-type"] {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    font-size: 45px;
+    margin-top: 75px;
+    margin-bottom: 30px;
+}
+
+ul.list-unstyled li {
+    font-family: 'SF Pro Text', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.756);
+    margin-bottom: 20px ;
+    margin-left: 20px;
+}
+
+.list-bullet .list-group-item::before {
+    content: "\2022"; /* Bullet character */
+    color: rgba(255, 255, 255, 0.756); /* Bullet color */
+    font-weight: bold; /* Bullet font weight */
+    display: inline-block; /* Make the bullet inline */
+    width: 1em; /* Set the width */
+    margin-left: -1em; /* Adjust margin for proper alignment */
+}
+
+.submit-request-button {
+    /* Add your custom styles here */
+    width: 80%;
+    background-color: #740e0e !important; 
+    border-color: #660c0c !important;
+    color: #fff; /* White text color */
+    padding: 15px 20px !important; /* Add padding */
+    border-radius: 30px !important; /* Add border radius */
+    font-size: 25px !important; /* Adjust font size */
+    font-weight: bold !important;
+    cursor: pointer; /* Add pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add transition effect */
+    margin-top: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.submit-request-button:hover {
+    background-color: #660c0c; /* Darker blue background color on hover */
+}

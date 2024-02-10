@@ -1,8 +1,23 @@
+<<<<<<< HEAD
+=======
+<?php 
+    include('navbar.html');
+    include('connection.php');
+    include('queries.php');
+
+    // get all types of sessions, terms, campuses listed in db, to display as options for session select 
+    $all_sessions = select(array("*"),"sessions");
+    $all_terms = select(array("*"),"terms");
+    $all_campus = select(array("*"),"campuses");
+?>
+
+>>>>>>> fc92dcddd5c33934cffe0f29b18ab12bd46a99b5
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="request_info.css">
     <style>
@@ -141,6 +156,8 @@
 </body>
 </html>
 =======
+=======
+>>>>>>> fc92dcddd5c33934cffe0f29b18ab12bd46a99b5
     <title>Request Information</title>
     <script src="helper_functions.js"></script>
 </head>
@@ -280,5 +297,9 @@
     ?>
     <script src="helper_functions.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
 
+=======
+</html>
+>>>>>>> fc92dcddd5c33934cffe0f29b18ab12bd46a99b5
