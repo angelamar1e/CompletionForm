@@ -5,7 +5,6 @@ include('connection.php');
 include('queries.php');
 
 session_start();
-// session_destroy();
 
 function alert_redirect($message,$path){
     echo '<script>
@@ -43,14 +42,14 @@ if ($existing_student == 0){
 
     if ($add_student_result and $add_request and $add_additional_info){
         alert_redirect("Request submitted successfully.","index.php");
+        session_destroy();
     }
     else{
         alert_redirect("Error: '. mysqli_error($conn) . '","index.php");
     }
 }
 else{
-<<<<<<< HEAD
-=======
+    alert_redirect("","");
     if(isset($_SESSION['prof1'])){
         $_SESSION['prof'] = $_SESSION['prof1'];
     }
@@ -58,7 +57,7 @@ else{
         $_SESSION['prof'] = $_SESSION['prof2'];
     }
 
->>>>>>> d96d9d1cfa5f6514bde7bc54a40f4a21470ea637
+    else{
     $add_request = add_request($_SESSION['stud_num'],$_SESSION['subj_code'],$_SESSION['subj_title'],$_SESSION['session_code'],$_SESSION['term_code'],$_SESSION['campus_id'],$_SESSION['prev_report'],$_SESSION['reason'],$_SESSION['prof']);
     
     if(isset($_SESSION['request_type'])){
@@ -76,9 +75,11 @@ else{
 
     if($add_request and $add_additional_info){
         alert_redirect("Request submitted successfully.","index.php");
+        session_destroy();
     }
     else{
         alert_redirect("Error: '. mysqli_error($conn) . '","index.php");
     }
 }
 ?>
+<?
