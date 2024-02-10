@@ -15,6 +15,13 @@
     <title>Request Information</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="request_info.css">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
 </head>
 <body class="bg-danger text-white">
     <div class="container">
@@ -123,7 +130,7 @@
 <div class="row mt-3">
     <div class="col-md-12">
         <!-- submit button -->
-        <input type="submit" value="Next" class="custom-submit-button" style="margin-left: 1700px;">
+        <input type="submit" value="Next" class="custom-submit-button submit-hover" style="margin-left: 1700px;">
     </div>
 </div>
 </form>
@@ -225,10 +232,15 @@
         </div>
     </div>
 </div>
-        <h3>Click next to save your input.</h3>
-        <input type="submit" value="Next">
-    </form>
+<div class="row mt-3">
+    <div class="col-md-12">
+        <!-- submit button -->
+        <input type="submit" value="Next" class="custom-submit-button submit-hover" style="margin-left: 1700px; margin-top: 500px">
+    </div>
+</div>
+</form>
 <?php } ?>
+
 <script src="helper_functions.js"></script>
 </body>
 </html>

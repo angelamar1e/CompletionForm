@@ -1,5 +1,5 @@
 body {
-    background-color:#822c2dce;
+    background-color:#8B0000;
     color: white;
 }
 
@@ -12,8 +12,10 @@ form > div.row:not(:last-child) {
     transition: background-color 0.3s;
 }
 
-.oblong-hover:hover {
-    background-color: rgb(129, 159, 47); /* Your desired hover color */
+.submit-hover:hover {
+    background-color: yellow;
+    color: black; /* Change the text color on hover if needed */
+    cursor: pointer; /* Change cursor on hover */
 }
 /* Custom CSS for smaller textboxes */
 /* Add these styles to your CSS file */
@@ -158,8 +160,7 @@ label {
     margin-bottom: 15px;
     margin-top: 20px;
 }
-/* Adjust the margin, padding, and other styles as needed */
-/* Adjust the margin, padding, and other styles as needed */
+
 .form-group {
     margin-bottom: 10px;
 }
@@ -262,4 +263,9 @@ label {
     border-radius: 10px; /* Adjust the radius as needed */
     margin-left: 2000px;
     text-align: justify;
+}
+.submit-hover:hover {
+    background-color: yellow;
+    color: black; /* Change the text color on hover if needed */
+    cursor: pointer; /* Change cursor on hover */
 }
