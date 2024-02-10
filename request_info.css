@@ -1,0 +1,129 @@
+
+.nav_container {
+    background-color: #740e0eb9; /* Set background color for the navigation bar */
+    color: #fff; /* Set text color for the navigation links */
+    padding: 10px; /* Add padding to the navigation bar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'SF Pro Display', sans-serif; 
+}
+
+
+.navbar {
+    width: 65%;
+    height: 67%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-left: 50px;
+}
+
+.img_div {
+    margin-right: 20px; /* Add space between the logo and navigation links */
+    margin-left: 40px;
+}
+
+img {
+    width: 100px; /* Set width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.tab {
+    display: inline-block; /* Display the navigation links horizontally */
+    margin-right: 50px;
+    position: relative;
+    text-align: center;
+    padding: 5px 10px; 
+    line-height: 30px;
+}
+
+.tab a {
+    font-size: small;
+    color: #fff; /* Set text color for the navigation links */
+    text-decoration: none; /* Remove underline from the links */
+}
+
+.tab a:hover {
+    background-color: #c79b15a4; 
+}
+
+.tab.active {
+    background-color: #c79b15a4; /* Change background color */
+    width: 15%;
+    border-radius: 40px;
+}
+/* Your existing styles */
+
+.request-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto; /* Center the container */
+    width: 65%; /* Adjust the width as needed */
+}
+
+h2 {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.tab {
+    margin-right: 20px;
+}
+
+.active {
+    border-bottom: 2px solid #fff;
+}
+
+h2 {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 20px;
+    transition: background-color 0.3s ease, border 0.3s ease; /* Include border in the transition */
+    outline: none; /* Remove the outline */
+}
+
+h2:hover {
+    background-color: #ffa500;
+    color: #fff;
+    border-color: #fff; /* Set the border color to white on hover */
+}
+
+.request-container {
+    text-align: center;
+}
+
+#requestDetailsContent {
+    display: none;
+    text-align: left;
+    margin-bottom: 10px;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange children in a row */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#requestDetailsContent p {
+    margin: 5px;
+}
+
+/* Adjust individual flex items if needed */
+#requestDetailsContent p {
+    flex: 1; /* Distribute available space equally among children */
+    /* Add any additional styling as needed */
+}
+
+#requestDetailsContent input {
+    height: 0.2in; 
+    padding: 5px; 
+}
+
+
