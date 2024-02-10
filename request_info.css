@@ -1,0 +1,44 @@
+body {
+    background-color: #8B0000; /* Dark red background */
+    color: white; /* White text color */
+}
+
+
+.tab-container {
+    display: flex;
+    margin-left: 35%;
+    margin-top: 25px;
+}
+
+.tab {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.tab.selected {
+    background-color: #c79b15a4;
+    border-radius: 25px;
+}
+
+.radio-container {
+    display: flex;
+    margin-left: 15%;
+}
+
+.field-container{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #c79b15a4 ;
+    width: 20%;
+    padding: 10px;
+    text-align: left;
+    border-radius: 50px;
+    
+}
+
+.professor-input-row {
+    width: 20%;
+
+}
