@@ -1,227 +1,367 @@
-/*
- Navicat Premium Data Transfer
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 10, 2024 at 03:26 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
- Source Server         : local
- Source Server Type    : MySQL
- Source Server Version : 100428 (10.4.28-MariaDB)
- Source Host           : localhost:3306
- Source Schema         : completion_form
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
- Target Server Type    : MySQL
- Target Server Version : 100428 (10.4.28-MariaDB)
- File Encoding         : 65001
 
- Date: 10/02/2024 10:06:17
-*/
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+--
+-- Database: `completion_form`
+--
+CREATE DATABASE IF NOT EXISTS `completion_form` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `completion_form`;
 
--- ----------------------------
--- Table structure for campuses
--- ----------------------------
-DROP TABLE IF EXISTS `campuses`;
-CREATE TABLE `campuses`  (
-  `campus_id` int NOT NULL AUTO_INCREMENT,
-  `campus_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`campus_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+-- --------------------------------------------------------
 
--- ----------------------------
--- Records of campuses
--- ----------------------------
-INSERT INTO `campuses` VALUES (1, 'A. Mabini Campus');
-INSERT INTO `campuses` VALUES (2, 'NDC Compound Campus');
-INSERT INTO `campuses` VALUES (3, 'M.H. Del Pilar Campus');
+--
+-- Table structure for table `campuses`
+--
 
--- ----------------------------
--- Table structure for completion_requests
--- ----------------------------
-DROP TABLE IF EXISTS `completion_requests`;
-CREATE TABLE `completion_requests`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `control_number` int NULL DEFAULT NULL,
-  `final_grade` decimal(2, 2) NULL DEFAULT NULL,
-  `units` decimal(2, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `completion_request_info`(`control_number` ASC) USING BTREE,
-  CONSTRAINT `completion_request_info` FOREIGN KEY (`control_number`) REFERENCES `requests` (`control_number`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+CREATE TABLE `campuses` (
+  `campus_id` int(11) NOT NULL,
+  `campus_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- ----------------------------
--- Records of completion_requests
--- ----------------------------
+--
+-- Dumping data for table `campuses`
+--
 
--- ----------------------------
--- Table structure for correction_requests
--- ----------------------------
-DROP TABLE IF EXISTS `correction_requests`;
-CREATE TABLE `correction_requests`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `control_number` int NULL DEFAULT NULL,
-  `modified_fname` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `modified_mname` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `modified_lname` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `correction_request_info`(`control_number` ASC) USING BTREE,
-  CONSTRAINT `correction_request_info` FOREIGN KEY (`control_number`) REFERENCES `requests` (`control_number`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+INSERT INTO `campuses` (`campus_id`, `campus_name`) VALUES
+(1, 'A. Mabini Campus'),
+(2, 'NDC Compound Campus'),
+(3, 'M.H. Del Pilar Campus');
 
--- ----------------------------
--- Records of correction_requests
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for courses
--- ----------------------------
-DROP TABLE IF EXISTS `courses`;
-CREATE TABLE `courses`  (
-  `course_code` char(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `course_title` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`course_code`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+--
+-- Table structure for table `completion_requests`
+--
 
--- ----------------------------
--- Records of courses
--- ----------------------------
-INSERT INTO `courses` VALUES ('AB-PHI', 'Bachelor of Arts in Philosophy');
-INSERT INTO `courses` VALUES ('ABCLS', 'Bachelor of Arts in Literature and Cultural Studies');
-INSERT INTO `courses` VALUES ('ABELS', 'Bachelor of Arts in English Language Studies');
-INSERT INTO `courses` VALUES ('ABF', 'Batsilyer ng Artes sa Filipinolohiya');
-INSERT INTO `courses` VALUES ('BAB', 'Bachelor of Arts in Broadcasting');
-INSERT INTO `courses` VALUES ('BAC', 'Bachelor of Arts in Communication');
-INSERT INTO `courses` VALUES ('BAEcon', 'Bachelor of Arts in Economics');
-INSERT INTO `courses` VALUES ('BAHist', 'Bachelor of Arts in History');
-INSERT INTO `courses` VALUES ('BAJ', 'Bachelor of Arts in Journalism');
-INSERT INTO `courses` VALUES ('BAPR', 'Bachelor of Arts in Public Relations');
-INSERT INTO `courses` VALUES ('BAPS', 'Bachelor of Arts in Political Science');
-INSERT INTO `courses` VALUES ('BAPsy', 'Bachelor of Arts in Psychology');
-INSERT INTO `courses` VALUES ('BASoc', 'Bachelor of Arts in Sociology');
-INSERT INTO `courses` VALUES ('BEEd', 'Bachelor of Elementary Education');
-INSERT INTO `courses` VALUES ('BPA', 'Bachelor of Public Administration');
-INSERT INTO `courses` VALUES ('BPE', 'Bachelor of Physical Education');
-INSERT INTO `courses` VALUES ('BPEA', 'Bachelor of Performing Arts Major in Theater Arts');
-INSERT INTO `courses` VALUES ('BSA', 'Bachelor of Science in Accountancy');
-INSERT INTO `courses` VALUES ('BSAr', 'Bachelor of Science in Architechture');
-INSERT INTO `courses` VALUES ('BSBA', 'Bachelor of Science in Business Administration');
-INSERT INTO `courses` VALUES ('BSBA-F', 'BSBA-Financial Management');
-INSERT INTO `courses` VALUES ('BSBA-H', 'BSBA-Human Resourse Development Management');
-INSERT INTO `courses` VALUES ('BSBA-M', 'BSBA-Marketing Management');
-INSERT INTO `courses` VALUES ('BSBA-O', 'BSBA-Operations Management');
-INSERT INTO `courses` VALUES ('BSBio', 'Bachelor of Science in Biology');
-INSERT INTO `courses` VALUES ('BSCE', ' Bachelor of Science in Civil Engineering');
-INSERT INTO `courses` VALUES ('BSChE', 'Bachelor of Science in Chemical Engineering');
-INSERT INTO `courses` VALUES ('BSChem', 'Bachelor of Science in Chemistry');
-INSERT INTO `courses` VALUES ('BSCpE', 'Bachelor of Science in Computer Engineering');
-INSERT INTO `courses` VALUES ('BSCS', 'Bachelor of Science in Computer Science');
-INSERT INTO `courses` VALUES ('BSECE', 'Bachelor of Science in Electronics Engineering');
-INSERT INTO `courses` VALUES ('BSEd', 'Bachelor of Secondary Education');
-INSERT INTO `courses` VALUES ('BSEE', 'Bachelor of Science in Electrical Engineering');
-INSERT INTO `courses` VALUES ('BSEPM', 'Bachelor of Science in Enviromental Planning and Management');
-INSERT INTO `courses` VALUES ('BSHM', 'Bachelor of Science in Hospitality Management');
-INSERT INTO `courses` VALUES ('BSID', 'Bachelor of Science in Interior Design');
-INSERT INTO `courses` VALUES ('BSIE', 'Bachelor of Science in Industrial Engineering');
-INSERT INTO `courses` VALUES ('BSIS', 'Bachelor of Science in Information Systems');
-INSERT INTO `courses` VALUES ('BSIT', 'Bachelor of Science in Information Technology');
-INSERT INTO `courses` VALUES ('BSLA', 'Bachelor of Science in Landscape Architecture');
-INSERT INTO `courses` VALUES ('BSMA', 'Bachelor of Science in Management Accounting');
-INSERT INTO `courses` VALUES ('BSMath', 'Bachelor of Science in Mathematics');
-INSERT INTO `courses` VALUES ('BSME', 'Bachelor of Science in Mechanical Engineering');
-INSERT INTO `courses` VALUES ('BSMinE', 'Bachelor of Science in Mining Engineering');
-INSERT INTO `courses` VALUES ('BSP', 'Bachelor of Science in Physics');
-INSERT INTO `courses` VALUES ('BSS', 'Bachelor of Sports Science');
-INSERT INTO `courses` VALUES ('BSTM', 'Bachelor of Science in Tourism Management');
-INSERT INTO `courses` VALUES ('BSTrM', 'Bachelor of Science in Travel Management');
+CREATE TABLE `completion_requests` (
+  `id` int(11) NOT NULL,
+  `control_number` char(11) DEFAULT NULL,
+  `final_grade` char(4) DEFAULT NULL,
+  `units` char(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- ----------------------------
--- Table structure for late_reporting_requests
--- ----------------------------
-DROP TABLE IF EXISTS `late_reporting_requests`;
-CREATE TABLE `late_reporting_requests`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `control_number` int NULL DEFAULT NULL,
-  `final_grade` decimal(2, 2) NULL DEFAULT NULL,
-  `units` decimal(2, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `late_request_info`(`control_number` ASC) USING BTREE,
-  CONSTRAINT `late_request_info` FOREIGN KEY (`control_number`) REFERENCES `requests` (`control_number`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for requests
--- ----------------------------
-DROP TABLE IF EXISTS `requests`;
-CREATE TABLE `requests`  (
-  `control_number` int NOT NULL,
-  `student_number` char(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `subject_code` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `subject_title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `session_code` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `term_code` char(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `campus_id` int NULL DEFAULT NULL,
-  `reported_as` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `creation_date` date NULL DEFAULT NULL,
-  `requested_by` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`control_number`) USING BTREE,
-  INDEX `student`(`student_number` ASC) USING BTREE,
-  INDEX `session`(`session_code` ASC) USING BTREE,
-  INDEX `term`(`term_code` ASC) USING BTREE,
-  INDEX `campus`(`campus_id` ASC) USING BTREE,
-  CONSTRAINT `campus` FOREIGN KEY (`campus_id`) REFERENCES `campuses` (`campus_id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  CONSTRAINT `session` FOREIGN KEY (`session_code`) REFERENCES `sessions` (`session_code`) ON DELETE SET NULL ON UPDATE SET NULL,
-  CONSTRAINT `student` FOREIGN KEY (`student_number`) REFERENCES `students` (`student_number`) ON DELETE SET NULL ON UPDATE SET NULL,
-  CONSTRAINT `term` FOREIGN KEY (`term_code`) REFERENCES `terms` (`term_code`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+--
+-- Table structure for table `correction_requests`
+--
 
--- ----------------------------
--- Table structure for sessions
--- ----------------------------
-DROP TABLE IF EXISTS `sessions`;
-CREATE TABLE `sessions`  (
-  `session_code` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `session_desc` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`session_code`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+CREATE TABLE `correction_requests` (
+  `id` int(11) NOT NULL,
+  `control_number` char(11) DEFAULT NULL,
+  `modified_fname` varchar(30) DEFAULT NULL,
+  `modified_mname` varchar(30) DEFAULT NULL,
+  `modified_lname` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- ----------------------------
--- Records of sessions
--- ----------------------------
-INSERT INTO `sessions` VALUES ('D', 'Day Session');
-INSERT INTO `sessions` VALUES ('N', 'Night Session');
+--
+-- Dumping data for table `correction_requests`
+--
 
--- ----------------------------
--- Table structure for students
--- ----------------------------
-DROP TABLE IF EXISTS `students`;
-CREATE TABLE `students`  (
-  `student_number` char(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `first_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `middle_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `last_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `course_code` char(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `year` int NULL DEFAULT NULL,
-  `section` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`student_number`) USING BTREE,
-  INDEX `course`(`course_code` ASC) USING BTREE,
-  CONSTRAINT `course` FOREIGN KEY (`course_code`) REFERENCES `courses` (`course_code`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+INSERT INTO `correction_requests` (`id`, `control_number`, `modified_fname`, `modified_mname`, `modified_lname`) VALUES
+(1, NULL, 'Aron Nic', 'Catacutan', 'Santos');
 
--- ----------------------------
--- Table structure for terms
--- ----------------------------
-DROP TABLE IF EXISTS `terms`;
-CREATE TABLE `terms`  (
-  `term_code` char(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `term_desc` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`term_code`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+-- --------------------------------------------------------
 
--- ----------------------------
--- Records of terms
--- ----------------------------
-INSERT INTO `terms` VALUES ('1st', 'First Semester');
-INSERT INTO `terms` VALUES ('2nd', 'Second Semester');
-INSERT INTO `terms` VALUES ('Summer', 'Summer Semester');
+--
+-- Table structure for table `courses`
+--
 
-SET FOREIGN_KEY_CHECKS = 1;
+CREATE TABLE `courses` (
+  `course_code` char(6) NOT NULL,
+  `course_title` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`course_code`, `course_title`) VALUES
+('AB-PHI', 'Bachelor of Arts in Philosophy'),
+('ABCLS', 'Bachelor of Arts in Literature and Cultural Studies'),
+('ABELS', 'Bachelor of Arts in English Language Studies'),
+('ABF', 'Batsilyer ng Artes sa Filipinolohiya'),
+('BAB', 'Bachelor of Arts in Broadcasting'),
+('BAC', 'Bachelor of Arts in Communication'),
+('BAEcon', 'Bachelor of Arts in Economics'),
+('BAHist', 'Bachelor of Arts in History'),
+('BAJ', 'Bachelor of Arts in Journalism'),
+('BAPR', 'Bachelor of Arts in Public Relations'),
+('BAPS', 'Bachelor of Arts in Political Science'),
+('BAPsy', 'Bachelor of Arts in Psychology'),
+('BASoc', 'Bachelor of Arts in Sociology'),
+('BEEd', 'Bachelor of Elementary Education'),
+('BPA', 'Bachelor of Public Administration'),
+('BPE', 'Bachelor of Physical Education'),
+('BPEA', 'Bachelor of Performing Arts Major in Theater Arts'),
+('BSA', 'Bachelor of Science in Accountancy'),
+('BSAr', 'Bachelor of Science in Architechture'),
+('BSBA', 'Bachelor of Science in Business Administration'),
+('BSBA-F', 'BSBA-Financial Management'),
+('BSBA-H', 'BSBA-Human Resourse Development Management'),
+('BSBA-M', 'BSBA-Marketing Management'),
+('BSBA-O', 'BSBA-Operations Management'),
+('BSBio', 'Bachelor of Science in Biology'),
+('BSCE', ' Bachelor of Science in Civil Engineering'),
+('BSChE', 'Bachelor of Science in Chemical Engineering'),
+('BSChem', 'Bachelor of Science in Chemistry'),
+('BSCpE', 'Bachelor of Science in Computer Engineering'),
+('BSCS', 'Bachelor of Science in Computer Science'),
+('BSECE', 'Bachelor of Science in Electronics Engineering'),
+('BSEd', 'Bachelor of Secondary Education'),
+('BSEE', 'Bachelor of Science in Electrical Engineering'),
+('BSEPM', 'Bachelor of Science in Enviromental Planning and Management'),
+('BSHM', 'Bachelor of Science in Hospitality Management'),
+('BSID', 'Bachelor of Science in Interior Design'),
+('BSIE', 'Bachelor of Science in Industrial Engineering'),
+('BSIS', 'Bachelor of Science in Information Systems'),
+('BSIT', 'Bachelor of Science in Information Technology'),
+('BSLA', 'Bachelor of Science in Landscape Architecture'),
+('BSMA', 'Bachelor of Science in Management Accounting'),
+('BSMath', 'Bachelor of Science in Mathematics'),
+('BSME', 'Bachelor of Science in Mechanical Engineering'),
+('BSMinE', 'Bachelor of Science in Mining Engineering'),
+('BSP', 'Bachelor of Science in Physics'),
+('BSS', 'Bachelor of Sports Science'),
+('BSTM', 'Bachelor of Science in Tourism Management'),
+('BSTrM', 'Bachelor of Science in Travel Management');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `late_reporting_requests`
+--
+
+CREATE TABLE `late_reporting_requests` (
+  `id` int(11) NOT NULL,
+  `control_number` char(11) DEFAULT NULL,
+  `final_grade` char(4) DEFAULT NULL,
+  `units` char(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `requests`
+--
+
+CREATE TABLE `requests` (
+  `control_number` char(11) NOT NULL,
+  `student_number` char(15) DEFAULT NULL,
+  `subject_code` char(10) DEFAULT NULL,
+  `subject_title` varchar(50) DEFAULT NULL,
+  `session_code` char(5) DEFAULT NULL,
+  `term_code` char(6) DEFAULT NULL,
+  `campus_id` int(11) DEFAULT NULL,
+  `reported_as` varchar(255) DEFAULT NULL,
+  `reason` varchar(255) DEFAULT NULL,
+  `creation_date` date DEFAULT NULL,
+  `requested_by` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `session_code` char(5) NOT NULL,
+  `session_desc` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`session_code`, `session_desc`) VALUES
+('D', 'Day Session'),
+('N', 'Night Session');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `student_number` char(15) NOT NULL,
+  `first_name` varchar(30) DEFAULT NULL,
+  `middle_name` varchar(30) DEFAULT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `course_code` char(6) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  `section` char(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `terms`
+--
+
+CREATE TABLE `terms` (
+  `term_code` char(6) NOT NULL,
+  `term_desc` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `terms`
+--
+
+INSERT INTO `terms` (`term_code`, `term_desc`) VALUES
+('1st', 'First Semester'),
+('2nd', 'Second Semester'),
+('Summer', 'Summer Semester');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `campuses`
+--
+ALTER TABLE `campuses`
+  ADD PRIMARY KEY (`campus_id`) USING BTREE;
+
+--
+-- Indexes for table `completion_requests`
+--
+ALTER TABLE `completion_requests`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `completion reqs` (`control_number`);
+
+--
+-- Indexes for table `correction_requests`
+--
+ALTER TABLE `correction_requests`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `correction reqs` (`control_number`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`course_code`);
+
+--
+-- Indexes for table `late_reporting_requests`
+--
+ALTER TABLE `late_reporting_requests`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `late_request_info` (`control_number`);
+
+--
+-- Indexes for table `requests`
+--
+ALTER TABLE `requests`
+  ADD PRIMARY KEY (`control_number`),
+  ADD KEY `student` (`student_number`),
+  ADD KEY `session` (`session_code`),
+  ADD KEY `term` (`term_code`),
+  ADD KEY `campus` (`campus_id`);
+
+--
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_code`);
+
+--
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`student_number`),
+  ADD KEY `course` (`course_code`);
+
+--
+-- Indexes for table `terms`
+--
+ALTER TABLE `terms`
+  ADD PRIMARY KEY (`term_code`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `campuses`
+--
+ALTER TABLE `campuses`
+  MODIFY `campus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `completion_requests`
+--
+ALTER TABLE `completion_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `correction_requests`
+--
+ALTER TABLE `correction_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `late_reporting_requests`
+--
+ALTER TABLE `late_reporting_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `completion_requests`
+--
+ALTER TABLE `completion_requests`
+  ADD CONSTRAINT `completion reqs` FOREIGN KEY (`control_number`) REFERENCES `requests` (`control_number`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `correction_requests`
+--
+ALTER TABLE `correction_requests`
+  ADD CONSTRAINT `correction reqs` FOREIGN KEY (`control_number`) REFERENCES `requests` (`control_number`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `late_reporting_requests`
+--
+ALTER TABLE `late_reporting_requests`
+  ADD CONSTRAINT `late_request_info` FOREIGN KEY (`control_number`) REFERENCES `requests` (`control_number`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `requests`
+--
+ALTER TABLE `requests`
+  ADD CONSTRAINT `campus` FOREIGN KEY (`campus_id`) REFERENCES `campuses` (`campus_id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `session` FOREIGN KEY (`session_code`) REFERENCES `sessions` (`session_code`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `student` FOREIGN KEY (`student_number`) REFERENCES `students` (`student_number`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `term` FOREIGN KEY (`term_code`) REFERENCES `terms` (`term_code`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `students`
+--
+ALTER TABLE `students`
+  ADD CONSTRAINT `course` FOREIGN KEY (`course_code`) REFERENCES `courses` (`course_code`) ON DELETE SET NULL ON UPDATE SET NULL;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
