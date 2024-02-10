@@ -1,0 +1,265 @@
+body {
+    background-color:#822c2dce;
+    color: white;
+}
+
+form > div.row:not(:last-child) {
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+.oblong-hover {
+    border-radius: 10px; /* Adjust as needed */
+    transition: background-color 0.3s;
+}
+
+.oblong-hover:hover {
+    background-color: rgb(129, 159, 47); /* Your desired hover color */
+}
+/* Custom CSS for smaller textboxes */
+/* Add these styles to your CSS file */
+.custom-textbox-code {
+    width: 50%; 
+    margin-left: 50px; 
+}
+.custom-textbox-title {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-year {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-session {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-term {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-campus {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-reason {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-report {
+    width: 50%; 
+    margin-left: 50px;
+}
+.custom-textbox-label-code {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-school-year {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-school-session {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-term {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-campus {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-reason {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-textbox-label-report {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.custom-submit-button {
+    background-color: rgb(218, 233, 20);
+    color: #000000; 
+    padding: 30px 50px; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold
+}
+
+.custom-submit-button:hover {
+    background-color: #b39e26; 
+}
+.radio-group {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the spacing between radio groups */
+}
+
+/* Optionally, you can style the labels for better alignment */
+label {
+    margin-left: 5px; /* Adjust the spacing between the radio button and label */
+}
+
+.radio-group-late{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.radio-group-correction{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.radio-group-completion{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+/* Adjust the margin, padding, and other styles as needed */
+/* Adjust the margin, padding, and other styles as needed */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group-grade{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+
+}
+.form-group-units{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.form-group-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.yellow-box {
+    background-color: rgb(255, 170, 0);
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px; /* Adjust the radius as needed */
+    margin-left: 70px;
+    text-align: justify;
+}
+.form-group-first{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.form-group-middle{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.form-group-last{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.form-group-name2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.yellow-box-2 {
+    background-color: rgb(255, 170, 0);
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px; /* Adjust the radius as needed */
+    margin-left: 600px;
+    text-align: justify;
+}
+.form-group-grade2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+
+}
+.form-group-units2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.form-group-name3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.yellow-box-3 {
+    background-color: rgb(255, 170, 0);
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px; /* Adjust the radius as needed */
+    margin-left: 2000px;
+    text-align: justify;
+}
