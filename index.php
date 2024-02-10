@@ -1,7 +1,5 @@
 <?php 
     include('navbar.html');
-    session_start();
-    session_destroy();
 ?>
 
 <!DOCTYPE html>
