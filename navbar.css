@@ -1,7 +1,7 @@
 /* navbar.css */
 
 .nav_container {
-    background-color: #822c2dce; /* Set background color for the navigation bar */
+    background-color: #822C2E; /* Set background color for the navigation bar */
     color: #fff; /* Set text color for the navigation links */
     padding: 10px; /* Add padding to the navigation bar */
     display: flex;
@@ -51,6 +51,6 @@ img {
 
 .tab.active {
     background-color: #c79b15a4; /* Change background color */
-    width: 15%;
+    width: auto;
     border-radius: 40px;
 }
