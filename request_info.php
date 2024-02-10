@@ -22,6 +22,7 @@
     <a href="?type"><h3>Type of Request</h3></a>
     <?php 
         session_start();
+        // request details section
         if(isset($_REQUEST['details'])){ ?>
             <form action="process_request_details.php" method="post" id="request_info_form">
                 <!-- subject code, title input -->
@@ -94,6 +95,7 @@
         <?php
         } 
 
+        // request type section
         if(isset($_REQUEST['type'])) { ?>
         <form action="process_request_type.php" id="types" method="POST">
             <input type="radio" name="request_type" id="late" value="Late Reporting of Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Late Reporting of Grades') echo 'checked'; ?>>

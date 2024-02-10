@@ -100,9 +100,7 @@ function add_student($stud_num, $fname, $mname, $lname, $course, $year, $section
 function add_request($stud_num, $subj_code, $subj_title, $session, $term, $campus, $report,$reason,$prof){
     // Generate a control number with date and time
     $dateTime = date('YmdHis'); // Current date and time in the format YYYYMMDDHHMMSS
-    $randomNumber = mt_rand(0,999999); // Generate a random 4-digit number
-    $control_number = $dateTime . $randomNumber;
-    $control_number = substr($control_number, 0, 11);
+    $control_number = substr($dateTime, 0, 11);
 
     $stud_num = $_SESSION['stud_num'];
     $_SESSION['control_number'] = $control_number;
@@ -110,7 +108,7 @@ function add_request($stud_num, $subj_code, $subj_title, $session, $term, $campu
     $date = date("Y-m-d");
     global $conn;
     $query = "INSERT INTO requests(control_number, student_number, subject_code, subject_title, session_code, term_code, campus_id, reported_as, reason, creation_date, requested_by)
-            VALUES ($control_number, $stud_num, '$subj_code','$subj_title','$session', '$term', $campus, '$report','$reason','$date','$prof')";
+            VALUES ('$control_number', '$stud_num', '$subj_code','$subj_title','$session', '$term', $campus, '$report','$reason','$date','$prof')";
     $result = mysqli_query($conn, $query);
     return $result;
 }
