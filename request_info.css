@@ -188,7 +188,7 @@ form > div.row:not(:last-child) {
     margin-top: 20px;
 }
 .yellow-box {
-    background-color: rgb(255, 170, 0);
+    background-color: #c77d06;
     padding: 10px;
     align-items: center;
     border-radius: 10px; /* Adjust the radius as needed */
@@ -225,7 +225,7 @@ form > div.row:not(:last-child) {
 }
 
 .yellow-box-2 {
-    background-color: rgb(255, 170, 0);
+    background-color: #c77d06;
     padding: 10px;
     align-items: center;
     border-radius: 10px; /* Adjust the radius as needed */
@@ -256,15 +256,11 @@ form > div.row:not(:last-child) {
     margin-top: 20px;
 }
 .yellow-box-3 {
-    background-color: rgb(255, 170, 0);
+    background-color: #c77d06;
     padding: 10px;
     align-items: center;
-    border-radius: 10px; /* Adjust the radius as needed */
+    border-radius: 10px;
+    margin-bottom:10px;
     margin-left: 2000px;
     text-align: justify;
-}
-.submit-hover:hover {
-    background-color: yellow;
-    color: black; /* Change the text color on hover if needed */
-    cursor: pointer; /* Change cursor on hover */
 }

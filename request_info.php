@@ -118,34 +118,24 @@
              <input type="text" name="reason" id="reason" class="form-control custom-textbox-reason" value="<?php echo isset($_SESSION['reason']) ? $_SESSION['reason'] : '';?>" required minlength="5" maxlength="200">
         </div>
 
-        <!-- student previously reported as -->
-        <div class="form-group">
-              <label for="prev_report" class="custom-textbox-label-report">Student Previously Reported As:</label>
-              <input type="text" name="prev_report" id="prev_report" class="form-control custom-textbox-report" value="<?php echo isset($_SESSION['prev_report']) ? $_SESSION['prev_report'] : '';?>" required minlength="5" maxlength="200">
+            <!-- student previously reported as -->
+            <div class="form-group">
+                <label for="prev_report" class="custom-textbox-label-report">Student Previously Reported As:</label>
+                <input type="text" name="prev_report" id="prev_report" class="form-control custom-textbox-report" value="<?php echo isset($_SESSION['prev_report']) ? $_SESSION['prev_report'] : '';?>" required minlength="5" maxlength="200">
             </div>
         </div>
-    </div>
-<?php ?>
-
-
-<div class="row mt-3">
-    <div class="col-md-12">
-        <!-- submit button -->
-        <input type="submit" value="Next" class="custom-submit-button submit-hover" style="margin-left: 1700px;">
-    </div>
-</div>
-</form>
+    </form>
 <?php } ?>
 
 <?php if(isset($_REQUEST['type'])) { ?>
     <form action="process_request_type.php" id="types" method="POST">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="radio-group-late">
-                    <input type="radio" name="request_type" id="late" value="Late Reporting of Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Late Reporting of Grades') echo 'checked'; ?>>
-                    <label for="late">Late Reporting of Grades</label>
-                </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="radio-group-late">
+                <input type="radio" name="request_type" id="late" value="Late Reporting of Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Late Reporting of Grades') echo 'checked'; ?>>
+                <label for="late">Late Reporting of Grades</label>
             </div>
+        </div>
             
             <div class="col-md-4">
                 <div class="radio-group-correction">
@@ -160,13 +150,18 @@
                     <label for="completion">Completion of Incomplete Grades</label>
                 </div>
             </div>
+
+            <div class="row mt-3">
+            <div class="col-md-12">
+                <!-- submit button -->
+                <input type="submit" value="Next" class="custom-submit-button submit-hover" style="margin-left: auto; margin-right: auto; margin-top: 20px;">
+            </div>
         </div>
-    </form>
-<?php ?>
+    </div>
+</form>
 
-
-<div id="grades_form" style="display:none; margin-top: 10px;">
-    <div class="yellow-box">
+<div id="grades_form" style="display:none; margin-top: -550px;">
+    <div class="yellow-box" style="width: 400px; height: 400px;">
         <div class="form-group-grade">
             <div>
                 <label for="grades">Final Grade:</label>
@@ -208,8 +203,8 @@
     </div>
 </div>
 
-<div id="name_form" style="display:none; margin-top: 10px;">
-    <div class="yellow-box-2">
+<div id="name_form" style="display:none; margin-top: -550px; margin-left: 100px;">
+    <div class="yellow-box-2" style="width: 400px; height: 400px;">
         <!-- Fields for modifying name -->
         <div class="form-group-first">
             <label for="fname">First Name:</label>
@@ -233,15 +228,7 @@
         </div>
     </div>
 </div>
-<div class="row mt-3">
-    <div class="col-md-12">
-        <!-- submit button -->
-        <input type="submit" value="Next" class="custom-submit-button submit-hover" style="margin-left: 1700px; margin-top: 500px">
-    </div>
-</div>
-</form>
-<?php } ?>
-
+<?php  ?>
 
 <script src="helper_functions.js"></script>
 </body>
