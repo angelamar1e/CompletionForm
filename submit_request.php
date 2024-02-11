@@ -5,7 +5,6 @@ include('connection.php');
 include('queries.php');
 
 session_start();
-// session_destroy();
 
 function alert_redirect($message,$path){
     echo '<script>
@@ -43,6 +42,7 @@ if ($existing_student == 0){
 
     if ($add_student_result and $add_request and $add_additional_info){
         alert_redirect("Request submitted successfully.","index.php");
+        session_destroy();
     }
     else{
         alert_redirect("Error: '. mysqli_error($conn) . '","index.php");
@@ -73,6 +73,7 @@ else{
 
     if($add_request and $add_additional_info){
         alert_redirect("Request submitted successfully.","index.php");
+        session_destroy();
     }
     else{
         alert_redirect("Error: '. mysqli_error($conn) . '","index.php");

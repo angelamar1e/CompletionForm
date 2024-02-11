@@ -1,5 +1,15 @@
 /* navbar.css */
 
+@font-face {
+font-family: 'CustomFont';
+src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+}
+
+/* Define font stack */
+.custom-font {
+font-family: 'CustomFont', Arial, sans-serif; 
+}
+
 .nav_container {
     background-color: #822C2E; /* Set background color for the navigation bar */
     color: #fff; /* Set text color for the navigation links */
@@ -7,12 +17,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'SF Pro Display', sans-serif; 
 }
 
-
 .navbar {
-    width: 65%;
+    width: 70%;
     height: 67%;
     display: flex;
     flex-direction: row;
@@ -32,25 +40,26 @@ img {
 
 .tab {
     display: inline-block; /* Display the navigation links horizontally */
-    margin-right: 110px;
     position: relative;
     text-align: center;
     padding: 7px;
     line-height: 30px;
+    width: 25%;
 }
 
 .tab a {
-    font-size: 15px;
+    font-size: 20px;
     color: #fff; /* Set text color for the navigation links */
     text-decoration: none; /* Remove underline from the links */
 }
 
-.tab a:hover {
-    background-color: #c79b15a4; 
+.tab:not(.active) a:hover {
+    background-color: #c79b15a4;
+    border-radius: 40px;
+    padding: 4%;
 }
 
 .tab.active {
     background-color: #c79b15a4; /* Change background color */
-    width: auto;
     border-radius: 40px;
 }

@@ -123,7 +123,7 @@
                 </div>
             
                 <!-- to display if request type is Late Reporting of Grades or Completion of Incomplete Grades -->
-                <div id="late-fields" class="field-container">
+                <div id="grades_form" class="field-container" style="display:none;">
                     <div class="row">
                         <div class="col">
                             <div class="form-check form-check-inline">
@@ -154,18 +154,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- instructor's name input -->
-                <div class="row professor-input-row">
-                    <div class="col">
-                        <div class="form-check form-check-inline">
+                        <!-- instructor's name input -->
+                    <div class="row professor-input-row">
+                        <div class="col">
                             <label for="prof_name">Professor/Instructor's Name: </label>
                             <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
                         </div>
                     </div>
                 </div>
             
-
             <!-- to display if request type is Correction of Entry -->
             <div id="name_form" style="display:none;">
                 <!-- fields for modifying name -->
@@ -180,7 +177,7 @@
                 <div class="row professor-input-row">
                     <div class="col">
                         <label for="prof_name">Professor/Instructor's Name: </label>
-                        <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
+                        <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : '';?>">
                     </div>
                 </div>
             </div>
