@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2024 at 03:26 PM
+-- Generation Time: Feb 11, 2024 at 02:44 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -75,7 +75,7 @@ CREATE TABLE `correction_requests` (
 --
 
 INSERT INTO `correction_requests` (`id`, `control_number`, `modified_fname`, `modified_mname`, `modified_lname`) VALUES
-(1, NULL, 'Aron Nic', 'Catacutan', 'Santos');
+(2, '20240211768', 'Angela Marie', 'Catacutan', 'Dela Peña');
 
 -- --------------------------------------------------------
 
@@ -175,6 +175,15 @@ CREATE TABLE `requests` (
   `requested_by` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`control_number`, `student_number`, `subject_code`, `subject_title`, `session_code`, `term_code`, `campus_id`, `reported_as`, `reason`, `creation_date`, `requested_by`) VALUES
+('20240211514', 'fsdf', 'COMP20163', 'WebDev', 'D', '2nd', 2, 'hatdog', 'wala lang', '2024-02-11', 'Angela'),
+('20240211768', '2021-08204-MN-0', 'COMP20163', 'WebDev', 'N', '1st', 1, 'Cret', 'Secret', '2024-02-11', ''),
+('20240211978', '2021-08204-MN-0', 'COMP20163', 'WebDev', 'D', '1st', 1, 'ganito lang', 'kasi ganito', '2024-02-11', 'dasdas');
+
 -- --------------------------------------------------------
 
 --
@@ -209,6 +218,14 @@ CREATE TABLE `students` (
   `year` int(11) DEFAULT NULL,
   `section` char(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`student_number`, `first_name`, `middle_name`, `last_name`, `course_code`, `year`, `section`) VALUES
+('2021-08204-MN-0', 'Aron Nick', 'Catacutan', 'Santos', 'AB-PHI', 2, '2'),
+('fsdf', 'f', 'fsdf', 'fsdfd', 'ABCLS', 2, '2');
 
 -- --------------------------------------------------------
 
@@ -310,13 +327,13 @@ ALTER TABLE `campuses`
 -- AUTO_INCREMENT for table `completion_requests`
 --
 ALTER TABLE `completion_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `correction_requests`
 --
 ALTER TABLE `correction_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `late_reporting_requests`
