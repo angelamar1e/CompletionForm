@@ -32,8 +32,8 @@
             <p id="disclaimer" class="w-75">Going back to the homepage erases your input.</p>
         </div>
         <div class="row mt-5 tab-container justify-content-center text-center">
-            <div class="col-4"><a href="?details" class="tab_type <?php echo isset($_REQUEST['details']) ? 'selected' : ''; ?>">Request Details</a></div>
-            <div class="col-4"><a href="?type" class="tab_type <?php echo isset($_REQUEST['type']) ? 'selected' : ''; ?>">Type of Request</a></div>
+            <div class="col-4"><span class="part_label">Part 1.</span><a href="?details" class="tab_type <?php echo isset($_REQUEST['details']) ? 'selected' : ''; ?>">Request Details</a></div>
+            <div class="col-4"><span class="part_label">Part 2.</span><a href="?type" class="tab_type <?php echo isset($_REQUEST['type']) ? 'selected' : ''; ?>">Type of Request</a></div>
         </div>
         <div class="row">
             <!-- request details section -->
@@ -107,10 +107,10 @@
                         <div class="row mt-5">
                             <div class="row w-75">
                                 <label for="reason" class="p-0 m-0">Reason for Application</label>
-                                <textarea id="reason" name="reason" rows="3" value="<?php echo isset($_SESSION['reason']) ? $_SESSION['reason'] : '';?>" required></textarea>
+                                <textarea id="reason" name="reason" rows="3" required><?php echo isset($_SESSION['reason']) ? $_SESSION['reason'] : '';?></textarea>
                                 <!-- student previously reported as -->
                                 <label for="prev_report" class="p-0 mb-0">Student previously reported as</label>
-                                <textarea name="prev_report" id="prev_report" rows="3" value="<?php echo isset($_SESSION['prev_report']) ? $_SESSION['prev_report'] : '';?>" required></textarea>
+                                <textarea name="prev_report" id="prev_report" rows="3" required><?php echo isset($_SESSION['prev_report']) ? $_SESSION['prev_report'] : '';?></textarea>
                             </div>
                         </div>
                         <div class="row mt-5 w-75 text-end justify-content-end">

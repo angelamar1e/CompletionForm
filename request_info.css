@@ -8,6 +8,10 @@ body {
     font-size: larger;
 }
 
+.col-4 .part_label {
+    margin-right: 5%;
+}
+
 .tab_type {
     padding: 10px 20px;
     text-decoration: none;
