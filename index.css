@@ -17,10 +17,10 @@ body {
 body::before {
     content: ""; /* Create a pseudo-element */
     position: absolute;
-    top: 13%;
-    left: 0;
+    top: 13vh;
     width: 100%; /* Cover the entire width */
-    height: 87%; /* Cover the entire height */
+    min-height: 87vh;
+    /* height: 87vh; Cover the entire height */
     background-color: #822c2dce; /* Set the color and opacity of the layer */
 }
 
