@@ -1,3 +1,13 @@
+@font-face {
+font-family: 'CustomFont';
+src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+}
+
+/* Define font stack */
+.custom-font {
+font-family: 'CustomFont', Arial, sans-serif;
+}
+
 body {
     background-color: #8B0000; /* Dark red background */
     color: white; /* White text color */
@@ -5,19 +15,23 @@ body {
 
 /* Apply SF Pro Display Bold font to labels */
 h1 {
-    font-family: 'SF Pro Display', sans-serif; /* Specify the font family */
     font-weight: bold; /* Specify the font weight */
     text-align: left;
     background-color: #c79b15a4;
     width: 450px;
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 p {
     font-family: 'SF Pro Display', sans-serif; 
-    font-size: 16px;
+    font-size: 25px;
+}
+
+.row .label {
+    color: #ffce3cd3; 
+    text-decoration: dotted;
 }
 
 /* Add custom CSS rules here */

@@ -21,7 +21,7 @@
     <script src="helper_functions.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro+Display:wght@700&display=swap">
-    <!-- <link rel="stylesheet" href="request_info.css"> -->
+    <link rel="stylesheet" href="request_info.css">
 </head>
 <body>
 <div class="tab-container">
@@ -158,7 +158,7 @@
                     <div class="row professor-input-row">
                         <div class="col">
                             <label for="prof_name">Professor/Instructor's Name: </label>
-                            <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : '';?>">
+                            <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
                         </div>
                     </div>
                 </div>
