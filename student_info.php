@@ -31,7 +31,7 @@
                             <label for="studentnumber" class="col-md-6 col-form-label">Student Number: </label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="stud_num" id="stud_num" required>
+                            <input type="text" name="stud_num" id="stud_num" required pattern="20\d{2}-\d{5}-[A-Z]{2}-0" placeholder="20XX-XXXXX-MN-0">
                         </div>
                     </div>
                     <div class="row">
@@ -39,7 +39,7 @@
                             <label for="firstname" class="col-md-6 col-form-label">First Name: </label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="fname" id="fname" required>
+                            <input type="text" name="fname" id="fname" pattern="[A-Za-z]+" required>
                         </div>
                     </div>
                     <div class="row">
@@ -47,7 +47,7 @@
                             <label for="middlename" class="col-md-6 col-form-label">Middle Name: </label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="mname" id="mname" required>
+                            <input type="text" name="mname" id="mname" pattern="[A-Za-z]+">
                         </div>
                     </div>
                     <div class="row">
@@ -55,7 +55,7 @@
                             <label for="lastname" class="col-md-6 col-form-label">Last Name: </label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="lname" id="lname" required>
+                            <input type="text" name="lname" id="lname" pattern="[A-Za-z]+" required>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                             <label for="section" class="form-label">Section: </label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required>
+                            <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required pattern="\d{1}|\d{1}[A-Za-z]{1}" required>
                         </div>
                     </div>
                 </div>
