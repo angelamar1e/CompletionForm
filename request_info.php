@@ -198,9 +198,9 @@
                                 </div>
                                 <div class="col-5 d-flex flex-column">
                                     <!-- fields for modifying name -->
-                                    <input type="text" name="modified_fname" id="modified_fname" value="<?php echo isset($_SESSION['modified_fname']) ? $_SESSION['modified_fname'] : '';?>">
-                                    <input type="text" name="modified_mname" id="modified_mname" value="<?php echo isset($_SESSION['modified_mname']) ? $_SESSION['modified_mname'] : '';?>">
-                                    <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : '';?>">
+                                    <input type="text" name="modified_fname" id="modified_fname" value="<?php echo isset($_SESSION['modified_fname']) ? $_SESSION['modified_fname'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*">
+                                    <input type="text" name="modified_mname" id="modified_mname" value="<?php echo isset($_SESSION['modified_mname']) ? $_SESSION['modified_mname'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*">
+                                    <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*">
                                     <!-- instructor's name input -->
                                     <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : '';?>">
                                 </div>

@@ -17,7 +17,7 @@ body {
 body::before {
     content: ""; /* Create a pseudo-element */
     position: absolute;
-    top: 13%;
+    top: 18%;
     left: 0;
     width: 100%; /* Cover the entire width */
     height: 87%; /* Cover the entire height */
@@ -72,3 +72,4 @@ ul.list-unstyled li {
 .submit-request-button:hover {
     background-color: #660c0c; /* Darker blue background color on hover */
 }
+

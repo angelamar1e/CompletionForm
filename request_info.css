@@ -17,6 +17,12 @@ body {
     font-size: 30px;
 }
 
+.tab_type:hover {
+    color: #c79a15; /* Change text color to blue on hover */
+    cursor: pointer;
+}
+
+
 .tab_type.selected {
     background-color: #c79b15a4;
     border-radius: 25px;
@@ -26,6 +32,7 @@ body {
     padding: 1%;
     background-color: #c79b15a4;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 .radio-container label {

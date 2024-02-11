@@ -44,7 +44,7 @@
                                     <label for="firstname" class="w-100 text-end">First Name </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="fname" id="fname" value="<?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : '';?>" pattern="[A-Za-z]+" required>
+                                    <input type="text" name="fname" id="fname" value="<?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -52,7 +52,7 @@
                                     <label for="middlename" class="w-100 text-end">Middle Name </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="mname" id="mname" value="<?php echo isset($_SESSION['mname']) ? $_SESSION['mname'] : '';?>" pattern="[A-Za-z]+">
+                                    <input type="text" name="mname" id="mname" value="<?php echo isset($_SESSION['mname']) ? $_SESSION['mname'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*">
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -60,7 +60,7 @@
                                     <label for="lastname" class="w-100 text-end">Last Name </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="lname" id="lname" value="<?php echo isset($_SESSION['lname']) ? $_SESSION['lname'] : '';?>" pattern="[A-Za-z]+" required>
+                                    <input type="text" name="lname" id="lname" value="<?php echo isset($_SESSION['lname']) ? $_SESSION['lname'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*" required>
                                 </div>
                             </div>
                         </div>
