@@ -35,7 +35,7 @@
                                     <label for="studentnumber" class="w-100 text-end">Student Number: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="stud_num" id="stud_num" value="<?php echo isset($_SESSION['stud_num']) ? $_SESSION['stud_num'] : '';?>" required>
+                                    <input type="text" name="stud_num" id="stud_num" value="<?php echo isset($_SESSION['stud_num']) ? $_SESSION['stud_num'] : '';?>" required pattern="20\d{2}-\d{5}-[A-Z]{2}-0" placeholder="20XX-XXXXX-MN-0" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -43,7 +43,7 @@
                                     <label for="firstname" class="w-100 text-end">First Name: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="fname" id="fname" value="<?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : '';?>" required>
+                                    <input type="text" name="fname" id="fname" value="<?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : '';?>" pattern="[A-Za-z]+" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -51,7 +51,7 @@
                                     <label for="middlename" class="w-100 text-end">Middle Name: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="mname" id="mname" value="<?php echo isset($_SESSION['mname']) ? $_SESSION['mname'] : '';?>" required>
+                                    <input type="text" name="mname" id="mname" value="<?php echo isset($_SESSION['mname']) ? $_SESSION['mname'] : '';?>" pattern="[A-Za-z]+">
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -59,7 +59,7 @@
                                     <label for="lastname" class="w-100 text-end">Last Name: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="lname" id="lname" value="<?php echo isset($_SESSION['lname']) ? $_SESSION['lname'] : '';?>" required>
+                                    <input type="text" name="lname" id="lname" value="<?php echo isset($_SESSION['lname']) ? $_SESSION['lname'] : '';?>" pattern="[A-Za-z]+" required>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                     <label for="section" class="form-label w-100 text-end">Section: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required>
+                                    <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required pattern="\d{1}|\d{1}[A-Za-z]{1}" required>
                                 </div>
                             </div>
                                                 </div>
