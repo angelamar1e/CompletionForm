@@ -35,13 +35,13 @@
             <form action="process_request_details.php" method="post" id="request_info_form">
                 <!-- subject code, title input -->
                 <label for="subj_code">Subject Code</label>
-                <input type="text" name="subj_code" id="subj_code" value="<?php echo isset($_SESSION['subj_code']) ? $_SESSION['subj_code'] : '';?>" required>
+                <input type="text" name="subj_code" id="subj_code" value="<?php echo isset($_SESSION['subj_code']) ? $_SESSION['subj_code'] : '';?>" required pattern="[A-Za-z0-9]+" required>
                 <label for="subj_title">Subject Title</label>
-                <input type="text" name="subj_title" id="subj_title" value="<?php echo isset($_SESSION['subj_title']) ? $_SESSION['subj_title'] : '';?>" required>
+                <input type="text" name="subj_title" id="subj_title" value="<?php echo isset($_SESSION['subj_title']) ? $_SESSION['subj_title'] : '';?>" pattern="[A-Za-z]+" required>
                 
                 <!-- school year input -->
                 <label for="sy">School Year</label>
-                <input type="text" name="sy" id="sy" value="<?php echo isset($_SESSION['school_year']) ? $_SESSION['school_year'] : '';?>" required>
+                <input type="text" name="sy" id="sy" value="<?php echo isset($_SESSION['school_year']) ? $_SESSION['school_year'] : '';?>" required pattern="20[0-9]{2} - 20[0-9]{2}" placeholder="20XX-20XX" required>
                 
                 <!-- school session selection -->
                 <label for="session_select">School Session</label>
@@ -150,7 +150,7 @@
                             <div class="form-check form-check-inline">
                                 <!-- number of units input -->
                                 <label for="units">Number of Units:</label>
-                                <input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : '';?>">
+                                <input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : '';?>" required pattern="[3-5]" required>
                             </div>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
                     <div class="row professor-input-row">
                         <div class="col">
                             <label for="prof_name">Professor/Instructor's Name: </label>
-                            <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
+                            <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>" required pattern="[A-Za-z]+" required>
                         </div>
                     </div>
                 </div>
@@ -167,17 +167,17 @@
             <div id="name_form" style="display:none;">
                 <!-- fields for modifying name -->
                 <label for="fname">First Name</label>
-                <input type="text" name="modified_fname" id="modified_fname" value="<?php echo isset($_SESSION['modified_fname']) ? $_SESSION['modified_fname'] : '';?>">
+                <input type="text" name="modified_fname" id="modified_fname" value="<?php echo isset($_SESSION['modified_fname']) ? $_SESSION['modified_fname'] : '';?>" pattern="[A-Za-z]+">
                 <label for="mname">Middle Name</label>
-                <input type="text" name="modified_mname" id="modified_mname" value="<?php echo isset($_SESSION['modified_mname']) ? $_SESSION['modified_mname'] : '';?>">
+                <input type="text" name="modified_mname" id="modified_mname" value="<?php echo isset($_SESSION['modified_mname']) ? $_SESSION['modified_mname'] : '';?>" pattern="[A-Za-z]+">
                 <label for="lname">Last Name</label>
-                <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : '';?>">
+                <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : '';?>" pattern="[A-Za-z]+">
 
                 <!-- instructor's name input -->
                 <div class="row professor-input-row">
                     <div class="col">
                         <label for="prof_name">Professor/Instructor's Name: </label>
-                        <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : '';?>">
+                        <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : '';?>" required pattern="[A-Za-z]+" required>
                     </div>
                 </div>
             </div>
