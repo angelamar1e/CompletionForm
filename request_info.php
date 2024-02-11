@@ -58,7 +58,7 @@
                                         <input type="text" name="subj_code" id="subj_code" value="<?php echo isset($_SESSION['subj_code']) ? $_SESSION['subj_code'] : '';?>" required>
                                         <input type="text" name="subj_title" id="subj_title" value="<?php echo isset($_SESSION['subj_title']) ? $_SESSION['subj_title'] : '';?>" required>
                                         <!-- school year input -->
-                                        <input type="text" name="sy" id="sy" value="<?php echo isset($_SESSION['school_year']) ? $_SESSION['school_year'] : '';?>" required>
+                                        <input type="text" name="sy" id="sy" value="<?php echo isset($_SESSION['school_year']) ? $_SESSION['school_year'] : '';?>" pattern="^\d{4}-\d{4}$|^\d{2}-\d{2}$" placeholder="2023-2024 or 23-24" required>
                                         <!-- school session selection -->
                                         <select name="session_select" id="session_select" required>
                                             <option value="<?php echo isset($_SESSION['session_code']) ? $_SESSION['session_code'] : '';?>" selected hidden><?php echo isset($_SESSION['session_desc']) ? $_SESSION['session_desc'] : 'Select';?>
@@ -174,7 +174,7 @@
                                         <div class="col-5 p-0 text-end">
                                             <label for="units">Number of Units</label>
                                         </div>
-                                        <div class="col-5"><input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : '';?>"></div>
+                                        <div class="col-5"><input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : '';?>" pattern="^\d(\.\d)?$" placeholder="3.0 or 3"></div>
                                     </div>
                                     <!-- instructor's name input -->
                                     <div class="row w-75 justify-content-evenly professor-input-row">
@@ -182,7 +182,7 @@
                                             <label for="prof_name">Instructor's Name </label>
                                         </div>
                                         <div class="col-5">
-                                            <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
+                                            <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>" pattern="[A-Za-z]+( [A-Za-z]+)*">
                                         </div>
                                     </div>
                                 </div>
