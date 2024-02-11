@@ -43,19 +43,20 @@
             <!-- subject code input -->
             <div class="form-group">
                 <label for="subj_code" class="custom-textbox-label-code">Subject Code:</label>
-                <input type="text" name="subj_code" id="subj_code" class="form-control custom-textbox-code" value="<?php echo isset($_SESSION['subj_code']) ? $_SESSION['subj_code'] : '';?>" required>
+                <input type="text" name="subj_code" id="subj_code" class="form-control custom-textbox-code" value="<?php echo isset($_SESSION['subj_code']) ? $_SESSION['subj_code'] : '';?>" required minlength="3" maxlength="50"pattern="[A-Za-z0-9\s]+>
             </div>
 
             <!-- subject title input -->
             <div class="form-group">
                 <label for="subj_title" class="custom-textbox-label-title">Subject Title:</label>
-                <input type="text" name="subj_title" id="subj_title" class="form-control custom-textbox-title" value="<?php echo isset($_SESSION['subj_title']) ? $_SESSION['subj_title'] : '';?>" required>
+                <input type="text" name="subj_title" id="subj_title" class="form-control custom-textbox-title" value="<?php echo isset($_SESSION['subj_title']) ? $_SESSION['subj_title'] : '';?>" required minlength="3" maxlength="100" pattern="[A-Za-z0-9\s]+">
             </div>
 
             <!-- school year input -->
             <div class="form-group">
                 <label for="sy" class="custom-textbox-label-school-year">School Year:</label>
-                <input type="text" name="sy" id="sy" class="form-control custom-textbox-year" value="<?php echo isset($_SESSION['school_year']) ? $_SESSION['school_year'] : '';?>" required>
+                <input type="text" name="sy" id="sy" class="form-control custom-textbox-year" value="<?php echo isset($_SESSION['school_year']) ? $_SESSION['school_year'] : '';?>" required minlength="4" maxlength="10">
+            <!-- Assuming the school year should be 4 characters long, adjust as needed -->
             </div>
 
             <!-- school session selection -->
@@ -111,16 +112,16 @@
                 </select>
             </div>
 
-            <!-- reason for application input -->
-            <div class="form-group">
-                <label for="reason" class="custom-textbox-label-reason">Reason for Application:</label>
-                <input type="text" name="reason" id="reason" class="form-control custom-textbox-reason" value="<?php echo isset($_SESSION['reason']) ? $_SESSION['reason'] : '';?>" required>
-            </div>
+        <!-- reason for application input -->
+        <div class="form-group">
+             <label for="reason" class="custom-textbox-label-reason">Reason for Application:</label>
+             <input type="text" name="reason" id="reason" class="form-control custom-textbox-reason" value="<?php echo isset($_SESSION['reason']) ? $_SESSION['reason'] : '';?>" required minlength="5" maxlength="200">
+        </div>
 
-            <!-- student previously reported as -->
-            <div class="form-group">
-                <label for="prev_report" class="custom-textbox-label-report">Student Previously Reported As:</label>
-                <input type="text" name="prev_report" id="prev_report" class="form-control custom-textbox-report" value="<?php echo isset($_SESSION['prev_report']) ? $_SESSION['prev_report'] : '';?>" required>
+        <!-- student previously reported as -->
+        <div class="form-group">
+              <label for="prev_report" class="custom-textbox-label-report">Student Previously Reported As:</label>
+              <input type="text" name="prev_report" id="prev_report" class="form-control custom-textbox-report" value="<?php echo isset($_SESSION['prev_report']) ? $_SESSION['prev_report'] : '';?>" required minlength="5" maxlength="200">
             </div>
         </div>
     </div>
@@ -192,7 +193,7 @@
                 <label for="units">Number of Units:</label>
             </div>
             <div>
-                <input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : ''; ?>">
+                <input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : ''; ?>"required pattern="[0-9]+" min="1" max="3">
             </div>
         </div>
 
@@ -201,7 +202,7 @@
                 <label for="prof_name">Professor/Instructor's Name:</label>
             </div>
             <div>
-                <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : ''; ?>">
+                <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : ''; ?>"minlength="3" maxlength="50" pattern="[^0-9]*" required>
             </div>
         </div>
     </div>
@@ -212,23 +213,23 @@
         <!-- Fields for modifying name -->
         <div class="form-group-first">
             <label for="fname">First Name:</label>
-            <input type="text" name="modified_fname" id="modified_fname" value="<?php echo isset($_SESSION['modified_fname']) ? $_SESSION['modified_fname'] : ''; ?>">
+            <input type="text" name="modified_fname" id="modified_fname" value="<?php echo isset($_SESSION['modified_fname']) ? $_SESSION['modified_fname'] : ''; ?>" minlength="3" maxlength="50" pattern="[^0-9]*" required>
         </div>
 
         <div class="form-group-middle">
             <label for="mname">Middle Name:</label>
-            <input type="text" name="modified_mname" id="modified_mname" value="<?php echo isset($_SESSION['modified_mname']) ? $_SESSION['modified_mname'] : ''; ?>">
+            <input type="text" name="modified_mname" id="modified_mname" value="<?php echo isset($_SESSION['modified_mname']) ? $_SESSION['modified_mname'] : ''; ?>" minlength="3" maxlength="50" pattern="[^0-9]*" required>
         </div>
 
         <div class="form-group-last">
             <label for="lname">Last Name:</label>
-            <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : ''; ?>">
+            <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : ''; ?>" minlength="3" maxlength="50" pattern="[^0-9]*" required>
         </div>
 
         <!-- Instructor's name input -->
         <div class="form-group-name2">
             <label for="prof_name">Professor/Instructor's Name:</label>
-            <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : ''; ?>">
+            <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : ''; ?>" minlength="3" maxlength="50" pattern="[^0-9]*" required>
         </div>
     </div>
 </div>
@@ -240,6 +241,7 @@
 </div>
 </form>
 <?php } ?>
+
 
 <script src="helper_functions.js"></script>
 </body>
