@@ -24,10 +24,16 @@ h1 {
     border-radius: 15px;
 }
 
-p {
+p:not(#disclaimer) {
     font-family: 'SF Pro Display', sans-serif; 
     font-size: 25px;
 }
+
+#disclaimer {
+    font-style: italic;
+    font-size: larger;
+}
+
 
 .row .label {
     color: #ffce3cd3; 

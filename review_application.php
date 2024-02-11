@@ -52,6 +52,9 @@
 <body class="custom-font">
     <div class="container-fluid">
         <div class="row">
+            <div class="row justify-content-center mt-5">
+                <p id="disclaimer" class="w-75">Going back to the homepage erases your input.</p>
+            </div>
             <div class="row mt-5">
                 <?php
                 if ($complete_student_info){ ?>

@@ -28,6 +28,9 @@
 <body>
 <div class="container-fluid">
     <div class="row">
+        <div class="row justify-content-center mt-5">
+            <p id="disclaimer" class="w-75">Going back to the homepage erases your input.</p>
+        </div>
         <div class="row mt-5 tab-container justify-content-center text-center">
             <div class="col-4"><a href="?details" class="tab_type <?php echo isset($_REQUEST['details']) ? 'selected' : ''; ?>">Request Details</a></div>
             <div class="col-4"><a href="?type" class="tab_type <?php echo isset($_REQUEST['type']) ? 'selected' : ''; ?>">Type of Request</a></div>

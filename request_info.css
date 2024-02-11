@@ -3,6 +3,11 @@ body {
     color: white; /* White text color */
 }
 
+#disclaimer {
+    font-style: italic;
+    font-size: larger;
+}
+
 .tab_type {
     padding: 10px 20px;
     text-decoration: none;
