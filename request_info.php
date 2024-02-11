@@ -1,4 +1,7 @@
 <?php 
+     // Define the current page variable based on the filename
+     $current_page = basename($_SERVER['PHP_SELF']);
+
     include('navbar.html');
     include('connection.php');
     include('queries.php');
@@ -16,10 +19,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Information</title>
     <script src="helper_functions.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="request_info.css">
 </head>
 <body>
-    <a href="?details"><h3>Request Details</h3></a>
-    <a href="?type"><h3>Type of Request</h3></a>
+<div class="tab-container">
+    <a href="?details" class="tab <?php echo isset($_REQUEST['details']) ? 'selected' : ''; ?>">Request Details</a>
+    <a href="?type" class="tab <?php echo isset($_REQUEST['type']) ? 'selected' : ''; ?>">Type of Request</a>
+</div>
     <?php 
         session_start();
         // request details section
@@ -97,40 +105,66 @@
 
         // request type section
         if(isset($_REQUEST['type'])) { ?>
-        <form action="process_request_type.php" id="types" method="POST">
-            <input type="radio" name="request_type" id="late" value="Late Reporting of Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Late Reporting of Grades') echo 'checked'; ?>>
-            <label for="late">Late Reporting of Grades</label>
-            <input type="radio" name="request_type" id="correction" value="Correction of Entry" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Correction of Entry') echo 'checked'; ?>>
-            <label for="correction">Correction of Entry</label>
-            <input type="radio" name="request_type" id="completion" value="Completion of Incomplete Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Completion of Incomplete Grades') echo 'checked'; ?>>
-            <label for="completion">Completion of Incomplete Grades</label>
-
-            <!-- to display if request type is Late Reporting of Grades or Completion of Incomplete Grades -->
-            <div id="grades_form" style="display:none;">
-                <!-- final grade selection -->
-                <label for="grades">Final Grade</label>
-                <select name="grades" id="grades">
-                    <option value="<?php echo isset($_SESSION['grades']) ? $_SESSION['grades'] : '';?>" selected hidden><?php echo isset($_SESSION['grades']) ? $_SESSION['grades'] : 'Select';?>
-                    <option value="1.0">1.0</option>
-                    <option value="1.25">1.25</option>
-                    <option value="1.50">1.50</option>
-                    <option value="1.75">1.75</option>
-                    <option value="2.0">2.0</option>
-                    <option value="2.25">2.25</option>
-                    <option value="2.50">2.50</option>
-                    <option value="2.75">2.75</option>
-                    <option value="3.0">3.0</option>
-                    <option value="5.0">5.0</option>
-                </select>
-
-                <!-- number of units input -->
-                <label for="units">Number of Units</label>
-                <input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : '';?>">
-
+        <div class="container mt-4">
+            <form action="process_request_type.php" id="types" method="POST">
+                <div class="radio-container">
+                    <div class="col">
+                        <input type="radio" name="request_type" id="late" value="Late Reporting of Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Late Reporting of Grades') echo 'checked'; ?>>
+                        <label for="late">Late Reporting of Grades</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio" name="request_type" id="correction" value="Correction of Entry" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Correction of Entry') echo 'checked'; ?>>
+                        <label for="correction">Correction of Entry</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio" name="request_type" id="completion" value="Completion of Incomplete Grades" <?php if(isset($_POST['request_type']) && $_POST['request_type'] == 'Completion of Incomplete Grades') echo 'checked'; ?>>
+                        <label for="completion">Completion of Incomplete Grades</label>
+                    </div>
+                </div>
+            
+                <!-- to display if request type is Late Reporting of Grades or Completion of Incomplete Grades -->
+                <div id="late-fields" class="field-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check form-check-inline">
+                            <!-- final grade selection -->
+                            <label for="grades">Final Grade: </label>
+                                <select name="grades" id="grades">
+                                    <option value="<?php echo isset($_SESSION['grades']) ? $_SESSION['grades'] : '';?>" selected hidden><?php echo isset($_SESSION['grades']) ? $_SESSION['grades'] : 'Select';?>
+                                    <option value="1.0">1.0</option>
+                                    <option value="1.25">1.25</option>
+                                    <option value="1.50">1.50</option>
+                                    <option value="1.75">1.75</option>
+                                    <option value="2.0">2.0</option>
+                                    <option value="2.25">2.25</option>
+                                    <option value="2.50">2.50</option>
+                                    <option value="2.75">2.75</option>
+                                    <option value="3.0">3.0</option>
+                                    <option value="5.0">5.0</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check form-check-inline">
+                                <!-- number of units input -->
+                                <label for="units">Number of Units:</label>
+                                <input type="text" name="units" id="units" value="<?php echo isset($_SESSION['units']) ? $_SESSION['units'] : '';?>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- instructor's name input -->
-                <label for="prof_name">Professor/Instructor's Name</label>
-                <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
-            </div>
+                <div class="row professor-input-row">
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <label for="prof_name">Professor/Instructor's Name: </label>
+                            <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
+                        </div>
+                    </div>
+                </div>
+            
 
             <!-- to display if request type is Correction of Entry -->
             <div id="name_form" style="display:none;">
@@ -143,9 +177,14 @@
                 <input type="text" name="modified_lname" id="modified_lname" value="<?php echo isset($_SESSION['modified_lname']) ? $_SESSION['modified_lname'] : '';?>">
 
                 <!-- instructor's name input -->
-                <label for="prof_name">Professor/Instructor's Name</label>
-                <input type="text" name="request2_by" id="request2_by" value="<?php echo isset($_SESSION['prof2']) ? $_SESSION['prof2'] : '';?>">
+                <div class="row professor-input-row">
+                    <div class="col">
+                        <label for="prof_name">Professor/Instructor's Name: </label>
+                        <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : '';?>">
+                    </div>
+                </div>
             </div>
+        </div>
 
             <h3>Click next to save your input.</h3>
             <input type="submit"  value="Next">

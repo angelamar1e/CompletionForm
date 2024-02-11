@@ -1,0 +1,66 @@
+body {
+    background-color: #8B0000; /* Dark red background */
+    color: white; /* White text color */
+}
+
+/* Apply SF Pro Display Bold font to labels */
+h1 {
+    font-family: 'SF Pro Display', sans-serif; /* Specify the font family */
+    font-weight: bold; /* Specify the font weight */
+    text-align: left;
+    background-color: #c79b15a4;
+    width: 450px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+p {
+    font-family: 'SF Pro Display', sans-serif; 
+    font-size: 16px;
+}
+
+/* Add custom CSS rules here */
+.container {
+    margin-top: 30px;
+    display: flex; /* Create a flex container */
+    flex-direction: row; /* Arrange child elements in a row */
+    justify-content: center;
+}
+
+.row {
+    justify-content: center; /* Center the columns horizontally */
+}
+
+.col-md-6 {
+    text-align: left; /* Align content in columns to the left */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1, h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+input[type="submit"] {
+    width: 150px;
+    background-color: #c79b15a4; 
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Add border radius */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Add pointer cursor on hover */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+input[type="submit"]:hover {
+background-color: #c79a15;
+}

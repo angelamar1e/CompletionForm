@@ -49,8 +49,6 @@ if ($existing_student == 0){
     }
 }
 else{
-<<<<<<< HEAD
-=======
     if(isset($_SESSION['prof1'])){
         $_SESSION['prof'] = $_SESSION['prof1'];
     }
@@ -58,7 +56,6 @@ else{
         $_SESSION['prof'] = $_SESSION['prof2'];
     }
 
->>>>>>> d96d9d1cfa5f6514bde7bc54a40f4a21470ea637
     $add_request = add_request($_SESSION['stud_num'],$_SESSION['subj_code'],$_SESSION['subj_title'],$_SESSION['session_code'],$_SESSION['term_code'],$_SESSION['campus_id'],$_SESSION['prev_report'],$_SESSION['reason'],$_SESSION['prof']);
     
     if(isset($_SESSION['request_type'])){
