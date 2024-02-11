@@ -21,7 +21,7 @@
             <div class="col-md-6">
                  <form>
                     <label for="request-type">Completion Form</label><br>
-                     <ul class="list-unstyled list-bullet">
+                    <ul class="list-unstyled list-bullet">
                         <li class="list-group-item">Late Reporting of Grades</li>
                         <li class="list-group-item">Correction of Entry</li>
                         <li class="list-group-item">Completion of Incomplete Grades</li>
