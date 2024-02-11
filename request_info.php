@@ -198,7 +198,7 @@
 
         <div class="form-group-name">
             <div>
-                <label for="prof_name">Instructor's Name:</label>
+                <label for="prof_name">Professor/Instructor's Name:</label>
             </div>
             <div>
                 <input type="text" name="request1_by" id="request1_by" value="<?php echo isset($_SESSION['prof1']) ? $_SESSION['prof1'] : ''; ?>">

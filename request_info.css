@@ -134,9 +134,8 @@ form > div.row:not(:last-child) {
     margin-right: 20px; /* Adjust the spacing between radio groups */
 }
 
-/* Optionally, you can style the labels for better alignment */
-label {
-    margin-left: 5px; /* Adjust the spacing between the radio button and label */
+.label {
+    margin-left: 5px; 
 }
 
 .radio-group-late{
