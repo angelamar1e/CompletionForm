@@ -35,7 +35,7 @@
                                     <label for="studentnumber" class="w-100 text-end">Student Number: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="stud_num" id="stud_num" required>
+                                    <input type="text" name="stud_num" id="stud_num" value="<?php echo isset($_SESSION['stud_num']) ? $_SESSION['stud_num'] : '';?>" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -43,7 +43,7 @@
                                     <label for="firstname" class="w-100 text-end">First Name: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="fname" id="fname" required>
+                                    <input type="text" name="fname" id="fname" value="<?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : '';?>" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -51,7 +51,7 @@
                                     <label for="middlename" class="w-100 text-end">Middle Name: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="mname" id="mname" required>
+                                    <input type="text" name="mname" id="mname" value="<?php echo isset($_SESSION['mname']) ? $_SESSION['mname'] : '';?>" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -59,7 +59,7 @@
                                     <label for="lastname" class="w-100 text-end">Last Name: </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
-                                    <input type="text" name="lname" id="lname" required>
+                                    <input type="text" name="lname" id="lname" value="<?php echo isset($_SESSION['lname']) ? $_SESSION['lname'] : '';?>" required>
                                 </div>
                             </div>
                         </div>
