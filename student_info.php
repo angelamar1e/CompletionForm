@@ -112,10 +112,11 @@
                                     <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required pattern="\d{1}|\d{1}[A-Za-z]{1}" required>
                                 </div>
                             </div>
-                                                </div>
                         </div>
+                    </div>
                 </div>
                 <div class="row justify-content-end">
+                <h3>Click next to save your input.</h3>
                     <input type="submit" value="Next">
                 </div>
             </form>
