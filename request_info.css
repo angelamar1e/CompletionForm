@@ -3,28 +3,29 @@ body {
     color: white; /* White text color */
 }
 
-
-.tab-container {
-    display: flex;
-    margin-left: 35%;
-    margin-top: 25px;
-}
-
-.tab {
+.tab_type {
     padding: 10px 20px;
     text-decoration: none;
     color: white;
     cursor: pointer;
+    width: max-content;
+    font-size: 30px;
 }
 
-.tab.selected {
+.tab_type.selected {
     background-color: #c79b15a4;
     border-radius: 25px;
 }
 
 .radio-container {
-    display: flex;
-    margin-left: 15%;
+    padding: 1%;
+    background-color: #c79b15a4;
+    border-radius: 40px;
+}
+
+.radio-container label {
+    text-align: center;
+    margin: 0;
 }
 
 .field-container{
@@ -40,4 +41,35 @@ body {
 .professor-input-row {
     width: 20%;
 
+}
+
+label {
+    font-size: 25px;
+    font-weight: bold; /* Specify the font weight */
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form select {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+div textarea{
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+input[type="submit"]{
+    width:150px;
+    font-size: 30px;
+    background-color: #c79b15a4; 
+    color: white; /* White text color */
+    padding: 5px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor on hover */
 }

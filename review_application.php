@@ -55,7 +55,7 @@
             <div class="row mt-5">
                 <?php
                 if ($complete_student_info){ ?>
-                    <div class="col-4">
+                    <div class="col-5">
                         <h1>Student Information</h1>
                         <div class="row">
                             <p><span class="label">Student Number: </span><?php echo $_SESSION['stud_num'];?></p>
@@ -69,7 +69,7 @@
                     </div>
                 <?php
                 } ?>
-                <div class="col-4">
+                <div class="col-5">
                 <?php
                 if ($complete_request_info){ ?>
                         <div class="row">
@@ -112,9 +112,11 @@
             </div>
             <?php
             if ($complete_student_info and $complete_request_info and isset($_SESSION['request_type'])){ ?>
-                <form action="submit_request.php">
-                    <input type="submit" value="Submit">
-                </form>
+                <div class="row mt-3 text-end justify-content-end">
+                    <form action="submit_request.php">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
             <?php
             }
             else{ ?>

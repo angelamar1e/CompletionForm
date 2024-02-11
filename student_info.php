@@ -29,10 +29,10 @@
                 <!-- basic information -->
                 <div class="row">
                     <div class="col mt-5 d-flex justify-content-end">
-                        <div class="row w-75">
+                        <div class="row justify-content-end" style="width:80%">
                             <div class="row justify-content-center mb-3">
                                 <div class="col pe-3 d-flex align-items-center">
-                                    <label for="studentnumber" class="w-100 text-end">Student Number: </label>
+                                    <label for="studentnumber" class="w-100 text-end">Student Number </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
                                     <input type="text" name="stud_num" id="stud_num" value="<?php echo isset($_SESSION['stud_num']) ? $_SESSION['stud_num'] : '';?>" required pattern="20\d{2}-\d{5}-[A-Z]{2}-0" placeholder="20XX-XXXXX-MN-0" required>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="row justify-content-center mb-3">
                                 <div class="col text-end pe-3 d-flex align-items-center">
-                                    <label for="firstname" class="w-100 text-end">First Name: </label>
+                                    <label for="firstname" class="w-100 text-end">First Name </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
                                     <input type="text" name="fname" id="fname" value="<?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : '';?>" pattern="[A-Za-z]+" required>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="row justify-content-center mb-3">
                                 <div class="col text-end pe-3 d-flex align-items-center">
-                                    <label for="middlename" class="w-100 text-end">Middle Name: </label>
+                                    <label for="middlename" class="w-100 text-end">Middle Name </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
                                     <input type="text" name="mname" id="mname" value="<?php echo isset($_SESSION['mname']) ? $_SESSION['mname'] : '';?>" pattern="[A-Za-z]+">
@@ -56,7 +56,7 @@
                             </div>
                             <div class="row justify-content-center mb-3">
                                 <div class="col pe-3 d-flex align-items-center">
-                                    <label for="lastname" class="w-100 text-end">Last Name: </label>
+                                    <label for="lastname" class="w-100 text-end">Last Name </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
                                     <input type="text" name="lname" id="lname" value="<?php echo isset($_SESSION['lname']) ? $_SESSION['lname'] : '';?>" pattern="[A-Za-z]+" required>
@@ -66,10 +66,10 @@
                     </div>
                     <!-- course selection -->
                     <div class="col h-50 d-flex align-self-end">
-                        <div class="row w-75">
+                        <div class="row" style="width:80%">
                             <div class="row mb-3">
-                                <div class="col-3 pe-3 d-flex align-items-center">
-                                    <label for="course" class="form-label w-100 text-end">Course: </label>
+                                <div class="col-4 pe-3 d-flex align-items-center">
+                                    <label for="course" class="form-label w-100 text-end">Course </label>
                                 </div>
                                 <div class="col-8 d-flex align-items-center">
                                     <select name="course_select" class="course_select" id="course_select" required>
@@ -90,8 +90,8 @@
                             </div>
                             <!-- year selection -->
                             <div class="row mb-3">
-                                <div class="col-3 pe-3 d-flex align-items-center">
-                                    <label for="year" class="form-label w-100 text-end">Year: </label>
+                                <div class="col-4 pe-3 d-flex align-items-center">
+                                    <label for="year" class="form-label w-100 text-end">Year </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
                                     <select name="year_select" id="year_select" required>
@@ -105,8 +105,8 @@
                             </div>
                             <!-- section input -->
                             <div class="row mb-3">
-                                <div class="col-3 pe-3 d-flex align-items-center">
-                                    <label for="section" class="form-label w-100 text-end">Section: </label>
+                                <div class="col-4 pe-3 d-flex align-items-center">
+                                    <label for="section" class="form-label w-100 text-end">Section </label>
                                 </div>
                                 <div class="col d-flex align-items-center">
                                     <input type="text" name="section" id="section" value="<?php echo isset($_SESSION['section']) ? $_SESSION['section'] : '';?>" required pattern="\d{1}|\d{1}[A-Za-z]{1}" required>

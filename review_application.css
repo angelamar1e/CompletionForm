@@ -62,17 +62,15 @@ p {
 }
 
 input[type="submit"] {
-    width: 150px;
+    width:150px;
+    font-size: 30px;
+    margin-right: 5%;
     background-color: #c79b15a4; 
     color: white; /* White text color */
-    padding: 10px 20px; /* Add padding */
+    padding: 5px; /* Add padding */
     border: none; /* Remove border */
-    border-radius: 20px; /* Add border radius */
-    font-size: 16px; /* Adjust font size */
+    border-radius: 15px; /* Add border radius */
     cursor: pointer; /* Add pointer cursor on hover */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
 }
 
 input[type="submit"]:hover {

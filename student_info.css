@@ -24,7 +24,6 @@ body {
 form label {
     font-family: 'SF Pro Display', sans-serif; /* Specify the font family */
     font-weight: bold; /* Specify the font weight */
-    text-align: left;
     font-size: 25px;
 }
 
