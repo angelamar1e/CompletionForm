@@ -14,6 +14,11 @@ body {
     font-family: 'CustomFont';
 }
 
+#disclaimer {
+    font-style: italic;
+    font-size: larger;
+}
+
 .container {
     display: flex; /* Create a flex container */
     flex-direction: row; /* Arrange child elements in a row */
@@ -52,7 +57,7 @@ form select {
 }
 
 #select2-course_select-container {
-    min-width: 300px; 
+    min-width: 320px; 
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -65,7 +70,6 @@ form select {
 
 input[type="submit"] {
     width: 150px;
-    margin-right: 5%;
     font-size: 30px;
     background-color: #c79b15a4; 
     color: white; /* White text color */

@@ -25,6 +25,7 @@
     <?php session_start(); ?>
     <div class="container-fluid mt-5">
         <div class="row justify-content-center">
+            <p id="disclaimer" class="w-75">Going back to the homepage erases your input.</p>
             <form class="w-75" method="post" action="process_student_info.php" id="student_info_form" class="container">
                 <!-- basic information -->
                 <div class="row">
@@ -115,8 +116,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-end">
-                <h3>Click next to save your input.</h3>
+                <div class="row mt-5 text-end justify-content-end">
+                    <h5>Click next to save your input.</h5>
+                    <!-- submit button -->
                     <input type="submit" value="Next">
                 </div>
             </form>
