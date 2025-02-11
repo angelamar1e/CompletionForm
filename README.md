@@ -1,6 +1,6 @@
-# COMP20163_FinalReq
-The PUP Completion Manual Form 2011B was used as a reference for the web app.
-https://www.pup.edu.ph/downloads/files/PUPCompletionForm2011B.pdf
+# Web Form 2011B 📝
+The [PUP Completion Manual Form 2011B](https://www.pup.edu.ph/downloads/files/PUPCompletionForm2011B.pdf) was used as a reference for the web app.
 
-CSS Bootstrap 5 was used for layout.
-The file under the SQL Database folder contains the MySQL dump file for the database structure used for data storage.
+## Notes
+- CSS Bootstrap 5 was used for layout.
+- The file under the SQL Database folder is a MySQL dump file for the database/storage structure.
