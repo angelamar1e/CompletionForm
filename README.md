@@ -3,4 +3,4 @@ The [PUP Completion Manual Form 2011B](https://www.pup.edu.ph/downloads/files/PU
 
 ## Notes
 - CSS Bootstrap 5 was used for layout.
-- The file under the SQL Database folder is a MySQL dump file for the database/storage structure.
+- A MySQL dump file for the database structure used for data storage is included under the SQL Database folder.
